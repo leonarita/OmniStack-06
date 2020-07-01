@@ -1,0 +1,32 @@
+const Box = require('../models/Box');
+
+class BoxController {
+  async store(req, res) {
+    const { title } = req.body;
+
+    const boxExists = await Box.findOne({ title });
+
+    if (boxExists) {
+      return res.json(boxExists);
+    }
+
+    const box = await Box.create(req.body);
+    return res.json(box);
+  }
+
+  async show(req, res) {
+    const box = await Box.findById(req.params.id).populate({
+      path: 'files',
+
+      option: {
+        sort: {
+          createdAt: -1,
+        },
+      },
+    });
+
+    return res.json(box);
+  }
+}
+
+module.exports = new BoxController();

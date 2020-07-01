@@ -1,0 +1,24 @@
+Por questão de organização de pasta, não fiz deployment do server.
+
+Para fazer deploy no frontend (ReactJS) utilizando o Heroku:
+
+1- Criar conta no login e conectar com o github
+
+2- Configurar o código
+
+    - src/services/api.js
+
+        baseURL : [link do servidor já publicado]
+
+    - src/pages/Box/index.js
+
+        const io = socket('[link do servidor já publicado]')
+
+3- Adicionar a aplicação no github e, consequentemente, no heroku
+
+4- Settings >> Buildpacks >> add
+
+        mars/create-react-app
+
+5- Publicar
+

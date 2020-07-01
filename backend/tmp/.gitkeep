@@ -1,0 +1,29 @@
+Por questão de organização de pasta, não fiz deployment do server.
+
+Para fazer deploy no backend (NodeJS) utilizando o Heroku:
+
+1- Criar conta no login e conectar com o github
+
+2- Criar arquivo "Procfile"
+    Conteudo do arquivo: "web: npm start"
+
+3- Criar variáveis de ambiente
+
+    - src/server.js
+
+        server.listen(process.env.PORT || 3333)
+
+    - No método virtual do src/models/File.js:
+
+        const url = process.env.URL || 'http://localhost:3333'
+        return `${url}/files/${encodeURIComponent(this.path)}
+
+4- Adicionar a aplicação no github e, consequentemente, no heroku
+
+5- Criar as variáveis de ambiente
+
+    Settings >> config vars
+
+        URL : [link do "open app"]
+
+6- Publicar
