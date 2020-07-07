@@ -4,7 +4,7 @@
 <img src="/mobile/src/assets/logo.png">
 <br>
 
-## Projeto desenvolvido no evento OmniStack 09.0 fornecido pela empresa RocketSeat.
+## Projeto desenvolvido no evento OmniStack 06.0 fornecido pela empresa RocketSeat.
 
 Nessa semana, foi desenvolvido uma aplicação full stack integrando backend (com NodeJS), frontend (com ReactJS) e mobile (com React-Native).
 <br>
